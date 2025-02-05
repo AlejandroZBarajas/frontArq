@@ -1,0 +1,16 @@
+
+<app-header></app-header>
+<div id="body">
+
+  <div id="sidebar">
+    <products-sidebar></products-sidebar>
+  </div>
+
+  <div id="display">
+    <cards-display
+    *ngFor="let product of products"
+      [name]="product.Name"
+      [price]="product.Price">></cards-display>
+  </div>
+
+</div>
