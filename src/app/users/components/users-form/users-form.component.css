@@ -1,0 +1,13 @@
+form{
+  border:2px, solid;
+  border-color: grey;
+  border-radius: 5px;
+  width: 50%;
+}
+label{
+  width:50%;
+
+}
+input{
+  width:50%;
+}

@@ -17,14 +17,15 @@ export class UsersPageComponent implements OnInit{
     private userServ: GetUsersService
   ){}
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.userServ.getUsers().subscribe(data => {
+      console.log("Usuarios recibidos:", data)
       this.users = data.map(u => ({
-        Id:u.Id,
-        Name:u.Name,
-        PhoneNumber:u.PhoneNumber
-      }))
-    })
-
+        ID: u.ID,
+        Name: u.Name,
+        phone_number: u.phone_number
+      }));
+    });
   }
+
 }

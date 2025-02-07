@@ -1,0 +1,29 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+
+  <div class="field">
+    <label for="Name">Nombre:</label>
+    <input id="Name" type="text" formControlName="Name" required />
+
+  </div>
+  <div class="field">
+
+      <label for="Phone">Telefono:</label>
+      <input id="Phone" type="text" formControlName="phone_number" required />
+
+
+  </div>
+<div class="field">
+  <button type="submit" >Crear Usuario</button>
+
+</div>
+
+<div *ngIf="userForm.get('Name')?.invalid && userForm.get('Name')?.touched">
+  <p>El nombre es obligatorio</p>
+</div>
+
+<div *ngIf="userForm.get('Phone')?.invalid && userForm.get('Phone')?.touched">
+  <p *ngIf="userForm.get('Phone')?.hasError('required')">El precio es obligatorio</p>
+
+</div>
+</form>

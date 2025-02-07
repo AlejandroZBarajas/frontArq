@@ -12,9 +12,9 @@ export class UsersCardComponent {
 
   constructor (private deleteServ: DeleteUsersService){}
 
-  @Input() Id?: number;
-  @Input() name!: string;
-  @Input() phoneNumber!: number;
+  @Input() ID?: number;
+  @Input() Name!: string;
+  @Input() Phone!: string;
   @Output() edit = new EventEmitter<void>();
   @Output() delete = new EventEmitter<number>();
 
@@ -24,13 +24,13 @@ export class UsersCardComponent {
 
   onDelete(){
     console.log("Entra en onDelete");
-    console.log("ID recibido:", this.Id);
-    if (this.Id === undefined) {
+    console.log("ID recibido:", this.ID);
+    if (this.ID === undefined) {
       console.error("No se puede eliminar: ID no definido.");
       return;
     }
-    this.deleteServ.deleteUser(this.Id).subscribe(() => {
-      console.log(`User con ID ${this.Id} eliminado correctamente.`);
+    this.deleteServ.deleteUser(this.ID).subscribe(() => {
+      console.log(`User con ID ${this.ID} eliminado correctamente.`);
     }, error => {
       console.error("Error al eliminar el user", error);
     });

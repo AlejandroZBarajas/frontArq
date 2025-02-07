@@ -1,5 +1,7 @@
 export interface UserInterface {
-  Id?: number;
+  ID?: string;
   Name: string;
-  PhoneNumber: number;
+  phone_number: string;
 }
+
+
