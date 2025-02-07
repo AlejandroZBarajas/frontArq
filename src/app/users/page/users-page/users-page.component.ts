@@ -23,9 +23,11 @@ export class UsersPageComponent implements OnInit{
       this.users = data.map(u => ({
         ID: u.ID,
         Name: u.Name,
-        phone_number: u.phone_number
+        Phone: u.Phone
       }));
     });
+    console.log(this.users)
   }
+
 
 }

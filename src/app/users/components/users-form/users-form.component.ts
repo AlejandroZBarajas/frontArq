@@ -18,7 +18,7 @@ export class UsersFormComponent {
     this.userForm = this.fb.group({
 
       Name: ['', Validators.required],
-      phone_number: ['', [Validators.required, Validators.min(0)]]
+      Phone: ['', [Validators.required, Validators.min(0)]]
     });
   }
 
@@ -26,7 +26,7 @@ export class UsersFormComponent {
     if (this.userForm.valid) {
       const user: UserInterface = {
         Name: this.userForm.value.Name,
-        phone_number: this.userForm.value.phone_number
+        Phone: this.userForm.value.Phone
       };
       console.log(user)
       this.postUserService.createUser(user).subscribe(response => {
