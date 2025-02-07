@@ -1,1 +1,15 @@
-<p>users-card works!</p>
+<div class="card" *ngIf="!isDeleted">
+  <div class="row">
+    <h3>{{ name }}</h3>
+
+  </div>
+  <div class="row">
+    <p>Telefono: {{ phoneNumber }}</p>
+
+  </div>
+
+  <div class="row">
+    <button (click)="onEdit()">Editar</button>
+    <button (click)="onDelete()">Eliminar</button>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { ProductInterface } from '../../interface/product-interface';
-import { ProductsService } from '../../service/products.service';
+import { GetProductsService } from '../../productsServices/get-products.service';
 
 @Component({
   selector: 'products-page',
@@ -13,12 +13,17 @@ export class ProductsPageComponent implements OnInit{
 
   products: ProductInterface [] = []
 
-  constructor (private prodService: ProductsService){}
+  constructor (
+    private prodService: GetProductsService,
+  ){}
 
   ngOnInit(): void {
     this.prodService.getProducts().subscribe(data => {
-      this.products=data
+      this.products=data.map(p => ({
+        Id:p.Id,
+        Name:p.Name,
+        Price:p.Price
+      }))
     })
   }
-
 }

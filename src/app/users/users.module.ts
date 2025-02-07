@@ -23,6 +23,11 @@ const routes : Routes = [
     UsersRoutingModule,
     RouterModule.forChild(routes),
     CoreModule
-  ]
+  ],
+exports:[
+  UsersPageComponent,
+  UsersCardComponent,
+  UsersSidebarComponent
+]
 })
 export class UsersModule { }

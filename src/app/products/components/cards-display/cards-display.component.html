@@ -1,8 +1,14 @@
-<div class="card">
-  <h3>{{ name }}</h3>
-  <p>Precio: ${{ price }}</p>
+<div class="card" *ngIf="!isDeleted">
+  <div class="row">
+    <h3>{{ name }}</h3>
 
-  <div class="actions">
+  </div>
+  <div class="row">
+    <p>Precio: ${{ price }}</p>
+
+  </div>
+
+  <div class="row">
     <button (click)="onEdit()">Editar</button>
     <button (click)="onDelete()">Eliminar</button>
   </div>

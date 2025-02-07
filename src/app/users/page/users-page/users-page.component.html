@@ -1,1 +1,20 @@
 <app-header></app-header>
+
+<div id="body">
+
+  <div id="sidebar">
+    <users-sidebar></users-sidebar>
+  </div>
+
+  <div id="display">
+
+    <users-card
+    *ngFor="let user of users"
+      [Id]="user.Id"
+      [name]="user.Name"
+      [phoneNumber]="user.PhoneNumber"
+    ></users-card>
+
+  </div>
+
+</div>

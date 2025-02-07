@@ -1,5 +1,6 @@
 
 <app-header></app-header>
+
 <div id="body">
 
   <div id="sidebar">
@@ -9,8 +10,10 @@
   <div id="display">
     <cards-display
     *ngFor="let product of products"
+      [Id]="product.Id"
       [name]="product.Name"
-      [price]="product.Price">></cards-display>
+      [price]="product.Price"
+    ></cards-display>
   </div>
 
 </div>
