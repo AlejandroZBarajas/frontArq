@@ -1,0 +1,17 @@
+<div id="form">
+  <form (ngSubmit)="onSubmit()">
+    <h2>Formulario de edición de usuario</h2>
+
+    <div class="field">
+      <label for="name">Nuevo nombre</label>
+      <input id="name" [(ngModel)]="user.Name" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="Phone">Nuevo teléfono</label>
+      <input id="Phone" [(ngModel)]="user.Name" Phone="Phone" required>
+
+    </div>
+    <button type="submit">Actualizar usuario</button>
+  </form>
+</div>

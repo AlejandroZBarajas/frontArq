@@ -8,7 +8,8 @@ import { UsersCardComponent } from './components/users-card/users-card.component
 import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from '../core/core.module';
 import { UsersFormComponent } from './components/users-form/users-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserUpdaterFormComponent } from './components/user-updater-form/user-updater-form.component';
 
 const routes : Routes = [
 {path : '', component: UsersPageComponent}
@@ -19,9 +20,11 @@ const routes : Routes = [
     UsersPageComponent,
     UsersSidebarComponent,
     UsersCardComponent,
-    UsersFormComponent
+    UsersFormComponent,
+    UserUpdaterFormComponent
   ],
   imports: [
+    FormsModule,
     ReactiveFormsModule,
     CommonModule,
     UsersRoutingModule,

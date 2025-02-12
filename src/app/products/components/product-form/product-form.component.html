@@ -12,17 +12,17 @@
       <input id="price" type="number" formControlName="price" required />
 
   </div>
-<div class="field">
-  <button type="submit" >Crear Producto</button>
+  <div class="field">
+    <button type="submit" >Crear Producto</button>
 
-</div>
+  </div>
 
-<div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
-  <p>El nombre es obligatorio</p>
-</div>
+  <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+    <p>El nombre es obligatorio</p>
+  </div>
 
-<div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
-  <p *ngIf="productForm.get('price')?.hasError('required')">El precio es obligatorio</p>
-  <p *ngIf="productForm.get('price')?.hasError('min')">El precio debe ser mayor a 0</p>
-</div>
+  <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+    <p *ngIf="productForm.get('price')?.hasError('required')">El precio es obligatorio</p>
+    <p *ngIf="productForm.get('price')?.hasError('min')">El precio debe ser mayor a 0</p>
+  </div>
 </form>
