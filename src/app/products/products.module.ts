@@ -11,6 +11,8 @@ import { CardsDisplayComponent } from './components/cards-display/cards-display.
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductUpdaterFormComponent } from './components/product-updater-form/product-updater-form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes : Routes = [
   {path: '', component: ProductsPageComponent}
@@ -22,23 +24,22 @@ const routes : Routes = [
     ProductsSidebarComponent,
     ProductsPageComponent,
     ProductFormComponent,
-
     CardsDisplayComponent,
+    ProductUpdaterFormComponent,
   ],
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     ProductsRoutingModule,
     RouterModule.forChild(routes),
     CoreModule,
-    //ProductFormComponent
 ],
   exports: [
+    ProductUpdaterFormComponent,
     ProductsPageComponent,
     ProductFormComponent,
-
     CardsDisplayComponent,
-
   ]
 })
 export class ProductsModule { }

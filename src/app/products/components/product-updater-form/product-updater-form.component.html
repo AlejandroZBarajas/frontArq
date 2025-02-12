@@ -1,0 +1,14 @@
+<div id="form">
+  <h2>Formulario de edición de producto</h2>
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">Nombre:</label>
+    <input id="name" [(ngModel)]="product.Name" name="name" required>
+
+    <label for="price">Precio:</label>
+    <input id="price" type="number" [(ngModel)]="product.Price" name="price" required>
+
+    <button type="submit">Actualizar Producto</button>
+    <button type="button" (click)="resetProduct()">Cancelar</button>
+  </form>
+
+</div>
